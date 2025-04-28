@@ -22,3 +22,7 @@ De redirect code in `404.html` bevat commentaar over hoe de redirect aangepast m
 ## Onderhoud
 
 Als de hoofdlettergevoeligheid van repositories verandert, kan de redirect logica in `404.html` worden aangepast.
+
+## Licentie
+Dit project is gelicentieerd onder de [European Union Public License v1.2](./LICENSE).
+
