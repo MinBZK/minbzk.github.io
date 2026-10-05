@@ -5,10 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina niet gevonden - MinBZK</title>
     <script>
-        // Functie om redirect uit te voeren voor algoritmekader naar Algoritmekader
+        // Redirects voor verhuisde sites en voor algoritmekader naar Algoritmekader
         (function() {
             var path = window.location.pathname;
-            
+
+            // Sites die naar een andere organisatie zijn verhuisd. GitHub stuurt
+            // een Pages-adres na een verhuizing niet zelf door, dus dat gebeurt
+            // hier: het pad achter de sitenaam, de zoekopdracht en het anker
+            // gaan mee naar het nieuwe adres.
+            var moved = {
+                'nerds': 'https://nederlandsedigitaledienst.github.io/NeRDS'
+            };
+            var site = path.split('/')[1] || '';
+            var target = moved[site.toLowerCase()];
+            if (target) {
+                var rest = path.slice(site.length + 1);
+                window.location.replace(target + rest + window.location.search + window.location.hash);
+                return;
+            }
+
             // Check voor kleine letter algoritmekader in het pad
             if (path.toLowerCase().includes('/algoritmekader/')) {
                 // Huidige situatie: redirect van /algoritmekader/ naar /Algoritmekader/
