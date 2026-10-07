@@ -31,6 +31,11 @@ MOVED_SITES = {
         "target": "https://nederlandsedigitaledienst.github.io/design-system",
         "pages": ["", "iframe.html"],
     },
+    # The old RegelRecht landing page had two pages; the site now has its own domain.
+    "regelrecht": {
+        "target": "https://regelrecht.rijks.app",
+        "pages": ["", "aanmelden/"],
+    },
 }
 
 PAGE = """<!DOCTYPE html>
