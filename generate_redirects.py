@@ -23,8 +23,8 @@ ROOT = Path(__file__).resolve().parent
 # Old directory on minbzk.github.io -> new address, and where its pages are listed.
 MOVED_SITES = {
     "NeRDS": {
-        "target": "https://nederlandsedigitaledienst.github.io/NeRDS",
-        "sitemap": "https://nederlandsedigitaledienst.github.io/NeRDS/sitemap.xml",
+        "target": "https://nerds.digitaledienst.overheid.nl",
+        "sitemap": "https://nerds.digitaledienst.overheid.nl/sitemap.xml",
     },
     # Storybook addresses a story in the query string, so two pages cover it.
     "storybook": {

@@ -8,7 +8,7 @@ Deze site zorgt voor de volgende redirects:
 
 1. De homepage (`minbzk.github.io`) verwijst door naar `https://github.com/minbzk/`
 2. Bij een 404 melding op `/algoritmekader/...` wordt er automatisch een redirect uitgevoerd naar `/Algoritmekader/...`
-3. Bij een 404 melding op `/NeRDS/...` wordt er doorgestuurd naar dezelfde pagina op `https://nederlandsedigitaledienst.github.io/NeRDS/...`. De NeRDS is verhuisd naar de organisatie NederlandseDigitaleDienst, en GitHub stuurt een Pages-adres na een verhuizing niet zelf door.
+3. Bij een 404 melding op `/NeRDS/...` wordt er doorgestuurd naar dezelfde pagina op `https://nerds.digitaledienst.overheid.nl/...`. De NeRDS is verhuisd naar de Nederlandse Digitale Dienst en heeft daar een eigen domein; GitHub stuurt een Pages-adres na een verhuizing niet zelf door.
 
 4. Bij een 404 melding op `/storybook/...` wordt er doorgestuurd naar dezelfde pagina op `https://nederlandsedigitaledienst.github.io/design-system/...`. De Storybook is verhuisd en heet daar het NLDD Designsysteem.
 
