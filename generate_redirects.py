@@ -36,6 +36,11 @@ MOVED_SITES = {
         "target": "https://regelrecht.rijks.app",
         "pages": ["", "aanmelden/"],
     },
+    # The Algoritmekader moved to the Algoritmeregister; the page paths stayed the same.
+    "Algoritmekader": {
+        "target": "https://algoritmes.overheid.nl/nl/algoritmekader",
+        "sitemap": "https://algoritmes.overheid.nl/__sitemap__/nl.xml",
+    },
 }
 
 PAGE = """<!DOCTYPE html>
@@ -68,7 +73,8 @@ def write_site(directory: str, site: dict) -> int:
     pages = site.get("pages") or pages_from_sitemap(site["sitemap"], site["target"])
     for page in pages:
         url = f"{site['target']}/{page}"
-        relative = page if page.endswith(".html") else f"{page}index.html"
+        # Path() also covers sitemaps that list pages without a trailing slash.
+        relative = page if page.endswith(".html") else Path(page, "index.html")
         output = ROOT / directory / relative
         output.parent.mkdir(parents=True, exist_ok=True)
         output.write_text(PAGE.format(url=escape(url, quote=True)), encoding="utf-8")

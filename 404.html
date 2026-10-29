@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina niet gevonden - MinBZK</title>
     <script>
-        // Redirects voor verhuisde sites en voor algoritmekader naar Algoritmekader
+        // Redirects voor verhuisde sites
         (function() {
             var path = window.location.pathname;
 
@@ -16,7 +16,8 @@
             var moved = {
                 'nerds': 'https://nerds.digitaledienst.overheid.nl',
                 'storybook': 'https://nederlandsedigitaledienst.github.io/design-system',
-                'regelrecht': 'https://regelrecht.rijks.app'
+                'regelrecht': 'https://regelrecht.rijks.app',
+                'algoritmekader': 'https://algoritmes.overheid.nl/nl/algoritmekader'
             };
             var site = path.split('/')[1] || '';
             var target = moved[site.toLowerCase()];
@@ -26,20 +27,8 @@
                 return;
             }
 
-            // Check voor kleine letter algoritmekader in het pad
-            if (path.toLowerCase().includes('/algoritmekader/')) {
-                // Huidige situatie: redirect van /algoritmekader/ naar /Algoritmekader/
-                var newPath = path.replace(/\/algoritmekader\//i, '/Algoritmekader/');
-                
-                // Als toekomstige situatie omgekeerd wordt (Algoritmekader naar algoritmekader)
-                // Uncomment deze code en comment de bovenstaande regel
-                // var newPath = path.replace(/\/Algoritmekader\//i, '/algoritmekader/');
-                
-                window.location.href = window.location.origin + newPath;
-            } else {
-                // Voor andere 404's, stuur naar de homepage
-                window.location.href = "/";
-            }
+            // Andere 404's gaan naar de homepage
+            window.location.href = "/";
         })();
     </script>
 </head>
