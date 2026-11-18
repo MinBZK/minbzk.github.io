@@ -10,7 +10,7 @@ Deze site zorgt voor de volgende redirects:
 2. Bij een 404 melding op `/Algoritmekader/...` (ook met een kleine letter) wordt er doorgestuurd naar dezelfde pagina op `https://algoritmes.overheid.nl/nl/algoritmekader/...`. Het Algoritmekader staat nu op de site van het Algoritmeregister; de paden van de pagina's zijn gelijk gebleven.
 3. Bij een 404 melding op `/NeRDS/...` wordt er doorgestuurd naar dezelfde pagina op `https://nerds.digitaledienst.overheid.nl/...`. De NeRDS is verhuisd naar de Nederlandse Digitale Dienst en heeft daar een eigen domein; GitHub stuurt een Pages-adres na een verhuizing niet zelf door.
 
-4. Bij een 404 melding op `/storybook/...` wordt er doorgestuurd naar dezelfde pagina op `https://nederlandsedigitaledienst.github.io/design-system/...`. De Storybook is verhuisd en heet daar het NLDD Designsysteem.
+4. `/storybook/...` gaat naar `https://design.digitaledienst.overheid.nl`, de documentatie van het NLDD Designsysteem. De Storybook bestaat niet meer. Een pagina zat daar in de query string (`?path=/docs/components-actions-button--docs`), dus `storybook/redirect.js` leest het id uit het adres en stuurt door naar de pagina van dat component, patroon of onderwerp. Een id dat het script niet kent, gaat naar het overzicht van zijn sectie of naar de homepage. Die bestanden zijn met de hand gemaakt; `generate_redirects.py` raakt ze niet aan.
 
 5. Bij een 404 melding op `/regelrecht/...` wordt er doorgestuurd naar dezelfde pagina op `https://regelrecht.rijks.app/...`. De landingspagina van RegelRecht stond eerst op dit adres en heeft nu een eigen domein. Gedrukte publicaties verwijzen nog naar het oude adres.
 

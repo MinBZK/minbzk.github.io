@@ -26,11 +26,9 @@ MOVED_SITES = {
         "target": "https://nerds.digitaledienst.overheid.nl",
         "sitemap": "https://nerds.digitaledienst.overheid.nl/sitemap.xml",
     },
-    # Storybook addresses a story in the query string, so two pages cover it.
-    "storybook": {
-        "target": "https://nederlandsedigitaledienst.github.io/design-system",
-        "pages": ["", "iframe.html"],
-    },
+    # storybook/ is not in this list. Storybook addressed a story in the query
+    # string, so storybook/redirect.js maps each id to its page on
+    # design.digitaledienst.overheid.nl. Those files are written by hand.
     # The old RegelRecht landing page had two pages; the site now has its own domain.
     "regelrecht": {
         "target": "https://regelrecht.rijks.app",

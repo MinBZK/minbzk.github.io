@@ -15,11 +15,22 @@
             // gaan mee naar het nieuwe adres.
             var moved = {
                 'nerds': 'https://nerds.digitaledienst.overheid.nl',
-                'storybook': 'https://nederlandsedigitaledienst.github.io/design-system',
                 'regelrecht': 'https://regelrecht.rijks.app',
                 'algoritmekader': 'https://algoritmes.overheid.nl/nl/algoritmekader'
             };
             var site = path.split('/')[1] || '';
+
+            // Sites whose new address has other paths: everything goes to
+            // the new homepage. The pages that have a successor are handled
+            // by the redirect pages in the directory of the site.
+            var replaced = {
+                'storybook': 'https://design.digitaledienst.overheid.nl/'
+            };
+            if (replaced[site.toLowerCase()]) {
+                window.location.replace(replaced[site.toLowerCase()]);
+                return;
+            }
+
             var target = moved[site.toLowerCase()];
             if (target) {
                 var rest = path.slice(site.length + 1);
